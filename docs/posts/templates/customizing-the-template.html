@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Podcast.js</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900">
+  <link rel="stylesheet" href="/fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/magnific-popup.css">
+  <link rel="stylesheet" href="/css/jquery-ui.css">
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+
+
+  <link rel="stylesheet" href="/css/aos.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src='//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js'>
+  </script>  
+
+</head>
+
+<body>
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-4" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+
+          <div class="col-4 custom-logo" onclick="location.href='/';" style="cursor: pointer;">
+            Podcast.js
+          </div>
+          <div class="col-8">
+            <nav class="site-navigation position-relative text-right text-md-right" role="navigation">
+
+              <div class="d-block d-lg-none ml-md-0 mr-auto"><a href="#"
+                  class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+                <li class="active">
+                  <a href="/">Home</a>
+                </li>
+              </ul>
+            </nav>
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+    <div class="site-blocks-cover inner-page-cover bg-light mb-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 text-center">
+            <a href="#">Rich Dotcom </a><span class="mx-2">&bullet;</span> 21 August 2017 <span class="mx-2">&bullet;</span> 0:30:20
+            <h1 class="mb-3">Single post template</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container play-wrap">
+      <div class="player mb-5" style="width: 100%;">
+      </div>
+    </div>
+
+    <div class="container">
+      <br><br>
+      <div id="html-container">
+        <p>Templating in podcastjs is powered by <a href="http://mustache.github.io">Mustache</a>. All of the template views can<br>
+be found in the <code>themes/default/</code> folder. Feel free to customize the template as you wish. The template structure<br>
+is as follows:</p>
+<ul>
+<li><code>layout.html</code>: The parent template. You'll probably want to customize this first</li>
+<li><code>home.html</code>: The homepage template. Shown if you don't have an <a href="%base_url%25/usage/custom-homepage">index.md</a></li>
+<li><code>page.html</code>: The template used for single pages</li>
+<li><code>search.html</code>: The template used for search results</li>
+<li><code>error.html</code>: Shown when podcastjs encounters an error or can't find a page</li>
+</ul>
+<p>Remember you will need to restart the app after changing the template.</p>
+<h2>Enable Features on Pages by Altering Config Settings</h2>
+<p>Some features can be enabled on your pages by changing settings in the <code>config.default.js</code> file.</p>
+<h3>Enable Table of Contents</h3>
+<p>In <code>config.default.js</code> set <code>table_of_contents</code> to <code>true</code>. podcastjs uses <a href="https://github.com/jonschlinkert/markdown-toc">markdown-toc</a> to generate the table of contents on pages, so you can customize the apperance of the tables of contents by specifying values for parameters in the <code>table_of_contents_options</code> object in <code>config.default.js</code>.</p>
+<h3>Display Site Menu on Pages</h3>
+<p>In <code>config.default.js</code> set <code>menu_on_pages</code> to <code>true</code>. To make the menu collapsible, so that category headings can be expanded or collapsed - useful for sites with lots of pages - set <code>menu_on_pages_collapsible</code> to <code>true</code>.</p>
+<h2>Public Files</h2>
+<p>All static files in podcastjs (images, CSS, Javascript files etc.) are served from the <code>public</code> folder. This<br>
+is so that no one can access any other files in the install. Only files in the <code>public</code> folder are available<br>
+to the public.</p>
+<p>It's worth noting that when customising podcastjs you should always make your own files rather than customising<br>
+the existing podcastjs files, so that your changes don't get lost when you<br>
+<a href="%base_url%25/updates/updating-podcastjs">update podcastjs</a>.</p>
+<h2>Template Variables</h2>
+<p>Below are a list of template variables available to use in their respective templates:</p>
+<p><strong>home.html</strong></p>
+<ul>
+<li><code>config</code>: Holds an array of values from <code>config.js</code></li>
+<li><code>pages</code>: Structured list of categories and pages (used for navigation)</li>
+<li><code>body_class</code>: Class for the <code>&lt;body&gt;</code> tag</li>
+</ul>
+<p><strong>page.html</strong></p>
+<ul>
+<li><code>config</code>: Holds an array of values from <code>config.js</code></li>
+<li><code>pages</code>: Structured list of categories and pages (used for navigation)</li>
+<li><code>body_class</code>: Class for the <code>&lt;body&gt;</code> tag</li>
+<li><code>meta</code>: Holds an array of values taken from the page meta comment block (e.g. <code>meta.title</code>)</li>
+<li><code>content</code>: The HTML content of the page</li>
+<li><code>last_modified</code>: The formatted date of the time the file was last modified</li>
+</ul>
+<p><strong>search.html</strong></p>
+<ul>
+<li><code>config</code>: Holds an array of values from <code>config.js</code></li>
+<li><code>pages</code>: Structured list of categories and pages (used for navigation)</li>
+<li><code>body_class</code>: Class for the <code>&lt;body&gt;</code> tag</li>
+<li><code>search</code>: The current search query</li>
+<li><code>searchResults</code>: An array search results</li>
+</ul>
+<h2>Array Structure</h2>
+<p>The <code>pages</code> array has a structure similar to the following:</p>
+<ul>
+<li><code>slug</code>: The category slug</li>
+<li><code>title</code>: The category title</li>
+<li><code>is_index</code>: True for the top level files (ie not in a category)</li>
+<li><code>class</code>: CSS class</li>
+<li><code>sort</code>: The sort index for this category</li>
+<li><code>files[]</code>: Array of pages in this category</li>
+<li><code>slug</code>: The page slug</li>
+<li><code>title</code>: The page title</li>
+<li><code>active</code>: True if the current page is &quot;active&quot;</li>
+<li><code>sort</code>: The sort index for this page</li>
+</ul>
+<p>The <code>searchResults</code> array contains items which include:</p>
+<ul>
+<li><code>slug</code>: The page slug</li>
+<li><code>title</code>: The page title</li>
+<li><code>body</code>: The page content</li>
+<li><code>excerpt</code>: The page excerpt</li>
+</ul>
+
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+          <div class="col-md-6">
+            <h2>About Us</h2>
+            <p>A site to share our day-to-day about podcasts.js</p>
+          </div>
+        </div>
+
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script data-cfasync="false"></script>
+              <script>document.write(new Date().getFullYear());</script> 
+              , Podcast.js, All rights reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+      
+    <!-- libraries -->
+    <script src="/js/libraries/jquery-3.3.1.min.js"></script>
+    <script src="/js/libraries/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/js/libraries/jquery-ui.js"></script>
+    <script src="/js/libraries/popper.min.js"></script>
+    <script src="/js/libraries/bootstrap.min.js"></script>
+    <script src="/js/libraries/jquery.countdown.min.js"></script>
+    <script src="/js/libraries/jquery.magnific-popup.min.js"></script>
+    <script src="/js/libraries/aos.js"></script>
+    <script src="/js/libraries/mediaelement-and-player.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/techfort/LokiJS/master/src/lokijs.js"></script>
+    
+    <!-- application -->
+    <script src="/js/api-client.js"></script>
+    <script src="/js/home-podcast-controller.js"> </script>
+    <script src="/js/entrypoint.js"> </script>
+    
+  
+</body>
